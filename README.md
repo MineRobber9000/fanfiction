@@ -40,6 +40,7 @@ fanfiction.Scraper.get_story_metadata(story_id)
   * **num_follows** [int]
   * **num_words** [int]: Total number of words in all chapters of the story
   * **rated** [str]: The story's fiction rating. i.e. K, K+, T, M
+  * **summary** [str]: The summary (or description) of the work.
 
 ```
 fanfiction.Scraper.scrape_story(story_id, keep_html=False)
