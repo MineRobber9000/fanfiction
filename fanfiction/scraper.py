@@ -59,6 +59,7 @@ class Scraper:
         metadata_text = metadata_div.find(class_='xgray xcontrast_txt').text
         metadata_parts = metadata_text.split('-')
         genres = self.get_genres(metadata_parts[2].strip())
+        summary = soup.find("div",{"class":"xcontrast_txt"}).text
         metadata = {
             'id': story_id,
             'canon_type': pre_story_links[0].text,
@@ -68,7 +69,8 @@ class Scraper:
             'updated': int(times[0]['data-xutime']),
             'published': int(times[1]['data-xutime']),
             'lang': metadata_parts[1].strip(),
-            'genres': genres
+            'genres': genres,
+            'summary': summary
         }
         for parts in metadata_parts:
             parts = parts.strip()
